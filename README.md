@@ -75,3 +75,12 @@ Beyond that, make sure to either download the JoyPixels font or change the **sta
 
 Less essential but important as well is making sure you change the value attributed to the variables *filecmd, *termcd, *browser, *music, and  *code ant the **config.h** to your preferred applications before using my build.
 
+## Screenshots
+
+![desktop](screenshots/desktop2.png)
+
+![desktop2](screenshots/desktop1.png)
+
+## To do/coming soon
+
+I'm working on a shell script that will install all dependencies on arch-based systems automatically.  
