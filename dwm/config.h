@@ -86,10 +86,10 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *filecmd[]  = { "thunar", NULL };
 static const char *calendar[]  = { "gsimplecal", NULL };
 static const char *taskmanager[]  = { "xfce4-taskmanager", NULL };
-static const char *termcmd[] = {"terminator", NULL};
-static const char *browser[] = {"firefox", NULL};
+static const char *termcmd[] = {"alacritty", NULL};
+static const char *browser[] = {"vimb", NULL};
 static const char *music[] = {"spotify", NULL};
-static const char *code[] = {"vim", NULL};
+static const char *code[] = {"neovide", NULL};
 static const char *logout[] = {"arcolinux-logout", NULL};
 
 #include "selfrestart.c"
