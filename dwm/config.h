@@ -48,9 +48,7 @@ static const Rule rules[] = {
 	/* class                       instance    title      tags mask      isfloating   monitor */
 	{ "Gimp",                      NULL,       NULL,       0,            0,           -1 },
 	{ "Xfce4-terminal",            NULL,       NULL,       0,            1,           -1 },
-	{ "firefox",                   NULL,       NULL,       0,            0,           -1 },
-	{ "Arcolinux-welcome-app.py",  NULL,       NULL,       0,            1,           -1 },
-	{ "Arcolinux-calamares-tool.py",  NULL,       NULL,       0,            1,           -1 },	
+	{ "firefox",                   NULL,       NULL,       0,            0,           -1 },	
 };
 
 /* layout(s) */
@@ -90,7 +88,12 @@ static const char *termcmd[] = {"alacritty", NULL};
 static const char *browser[] = {"vimb", NULL};
 static const char *music[] = {"spotify", NULL};
 static const char *code[] = {"neovide", NULL};
+/*logout - must add arco repositories*/
 static const char *logout[] = {"arcolinux-logout", NULL};
+/*audio*/
+static const char *mutecmd[] = { "amixer", "-q", "set", "Master", "toggle", NULL };
+static const char *volupcmd[] = { "amixer", "-q", "set", "Master", "5%+", "unmute", NULL };
+static const char *voldowncmd[] = { "amixer", "-q", "set", "Master", "5%-", "unmute", NULL };
 
 #include "selfrestart.c"
 #include "shiftview.c"
@@ -144,6 +147,9 @@ static Key keys[] = {
 	{ Mod1Mask|ShiftMask,	        XK_Tab,	   shiftview,	   {.i = -1 } },
 	{ MODKEY,		        		XK_Tab,    shiftview,	   {.i =  1 } },
 	{ MODKEY|ShiftMask,		        XK_Tab,	   shiftview,	   {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_m, spawn, 				{.v = mutecmd } },
+	{ MODKEY,             			XK_Down, spawn, 			{.v = voldowncmd } },
+	{ MODKEY,             			XK_Up, spawn, 				{.v = volupcmd } },
 
 
 	TAGKEYS(                        XK_1,                      0)
