@@ -11,7 +11,7 @@ static const int showsystray        = 1;     /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const Bool viewontag         = True;     /* Switch view on tag switch */
-static const char *fonts[]          = { "Noto Sans Mono:size=11","JoyPixels:pixelsize=11:antialias=true:autohint=true"};
+static const char *fonts[]          = { "Noto Sans Mono:size=12","JoyPixels:pixelsize=12:antialias=true:autohint=true"};
 static const char dmenufont[]       = "monospace:size=10";
 static const char col_gray1[]       = "#282828";
 static const char col_gray2[]       = "#282828";
@@ -48,7 +48,8 @@ static const Rule rules[] = {
 	/* class                       instance    title      tags mask      isfloating   monitor */
 	{ "Gimp",                      NULL,       NULL,       0,            0,           -1 },
 	{ "Xfce4-terminal",            NULL,       NULL,       0,            1,           -1 },
-	{ "firefox",                   NULL,       NULL,       0,            0,           -1 },	
+	{ "firefox",                   NULL,       NULL,       0,            0,           -1 },
+	{"guvcview",		       NULL, 	   NULL,       0, 	     1,		  -1}	
 };
 
 /* layout(s) */
@@ -84,10 +85,14 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *filecmd[]  = { "thunar", NULL };
 static const char *calendar[]  = { "gsimplecal", NULL };
 static const char *taskmanager[]  = { "xfce4-taskmanager", NULL };
-static const char *termcmd[] = {"alacritty", NULL};
-static const char *browser[] = {"vimb", NULL};
+static const char *termcmd[] = {"st", NULL};
+static const char *browser[] = {"firefox", NULL};
+static const char *browser2[] = {"chromium", NULL};
+static const char *browser3[] = {"vieb", NULL};
 static const char *music[] = {"spotify", NULL};
-static const char *code[] = {"neovide", NULL};
+static const char *code[] = {"code", NULL};
+static const char *latex[] = {"gummi", NULL};
+static const char *webcam[] = {"guvcview", NULL};
 /*logout - must add arco repositories*/
 static const char *logout[] = {"arcolinux-logout", NULL};
 /*audio*/
@@ -105,9 +110,13 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = filecmd } },
 	{ MODKEY,			XK_x,	   spawn,	   {.v = logout}},
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
+	{ MODKEY|ShiftMask,             XK_o, spawn,          {.v = browser2 } },
+	{ MODKEY|ControlMask|ShiftMask,             XK_o, spawn,          {.v = browser3 } },
 	{ MODKEY,                       XK_o,      spawn,          {.v = browser} },
 	{ MODKEY,                       XK_s,      spawn,          {.v = music} },
 	{ MODKEY,                       XK_c,      spawn,          {.v = code} },
+	{ MODKEY|ShiftMask,                       XK_l,      spawn,          {.v = latex} },
+	{ MODKEY,                       XK_g,      spawn,          {.v = webcam} },
 	{MODKEY, 			XK_Return, spawn,	   {.v=termcmd}	},
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
@@ -124,10 +133,6 @@ static Key keys[] = {
 	/*{ MODKEY,                       XK_Tab,    view,           {0} },*/
 	{ MODKEY|ShiftMask,				XK_q,      killclient,     {0} },
 	{ MODKEY,						XK_q,      killclient,     {0} },
-	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
-	{ MODKEY,                       XK_g,      setlayout,      {.v = &layouts[1]} },
-	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
-	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY|ControlMask,			XK_comma,  cyclelayout,    {.i = -1 } },
 	{ MODKEY|ControlMask,           XK_period, cyclelayout,    {.i = +1 } },
 	{ MODKEY,                       XK_space,  cyclelayout,    {.i = +1 } },
@@ -163,29 +168,6 @@ static Key keys[] = {
 	TAGKEYS(                        XK_9,                      8)
 };
 
-/* IF YOU HAVE A AZERTY KEYBOARD USE THESE CODES
-	TAGKEYS(                        XK_ampersand,              0)
-	TAGKEYS(                        XK_eacute,                 1)
-	TAGKEYS(                        XK_quotedbl,               2)
-	TAGKEYS(                        XK_apostrophe,             3)
-	TAGKEYS(                        XK_parenleft,              4)
-	TAGKEYS(                        XK_section,                5)
-	TAGKEYS(                        XK_egrave,                 6)
-	TAGKEYS(                        XK_exclam,                 7)
-	TAGKEYS(                        XK_ccedilla,               8)
-*/
-
-/* THESE ARE THE ORIGINAL QWERTY KEYBOARD CODES
-	TAGKEYS(                        XK_1,                      0)
-	TAGKEYS(                        XK_2,                      1)
-	TAGKEYS(                        XK_3,                      2)
-	TAGKEYS(                        XK_4,                      3)
-	TAGKEYS(                        XK_5,                      4)
-	TAGKEYS(                        XK_6,                      5)
-	TAGKEYS(                        XK_7,                      6)
-	TAGKEYS(                        XK_8,                      7)
-	TAGKEYS(                        XK_9,                      8)
-*/
 
 /* button definitions */
 /* click can be ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */
