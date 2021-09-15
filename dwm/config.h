@@ -1,5 +1,4 @@
 /* See LICENSE file for copyright and license details. */
-
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int gappx     = 15;        /* gaps between windows */
@@ -13,11 +12,11 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const Bool viewontag         = True;     /* Switch view on tag switch */
 static const char *fonts[]          = { "Noto Sans Mono:size=12","JoyPixels:pixelsize=12:antialias=true:autohint=true"};
 static const char dmenufont[]       = "monospace:size=10";
-static const char col_gray1[]       = "#282828";
-static const char col_gray2[]       = "#282828";
-static const char col_gray3[]       = "#ebdbb2";
-static const char col_gray4[]       = "#ebdbb2";
-static const char col_cyan[]        = "#7c6f64";
+static const char col_gray1[]       = "#282828"; /* bar background color*/
+static const char col_gray2[]       = "#282828"; /* unselected window*/
+static const char col_gray3[]       = "#ebdbb2"; /* unselected workspaces && slstatus*/
+static const char col_gray4[]       = "#ebdbb2"; /*selected workspace && title*/
+static const char col_cyan[]        = "#7c6f64"; /* highlighted workspace, boarder, bar #7c6f64 */
 static const unsigned int baralpha = 0xd0;
 static const unsigned int borderalpha = OPAQUE;
 static const char *colors[][3]      = {
@@ -90,8 +89,8 @@ static const char *browser[] = {"firefox", NULL};
 static const char *browser2[] = {"chromium", NULL};
 static const char *browser3[] = {"vieb", NULL};
 static const char *music[] = {"spotify", NULL};
-static const char *code[] = {"code", NULL};
-static const char *latex[] = {"gummi", NULL};
+static const char *code[] = {"emacs", NULL};
+//static const char *latex[] = {"gummi", NULL};
 static const char *webcam[] = {"guvcview", NULL};
 /*logout - must add arco repositories*/
 static const char *logout[] = {"arcolinux-logout", NULL};
@@ -99,7 +98,6 @@ static const char *logout[] = {"arcolinux-logout", NULL};
 static const char *mutecmd[] = { "amixer", "-q", "set", "Master", "toggle", NULL };
 static const char *volupcmd[] = { "amixer", "-q", "set", "Master", "5%+", "unmute", NULL };
 static const char *voldowncmd[] = { "amixer", "-q", "set", "Master", "5%-", "unmute", NULL };
-
 #include "selfrestart.c"
 #include "shiftview.c"
 
@@ -115,7 +113,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_o,      spawn,          {.v = browser} },
 	{ MODKEY,                       XK_s,      spawn,          {.v = music} },
 	{ MODKEY,                       XK_c,      spawn,          {.v = code} },
-	{ MODKEY|ShiftMask,                       XK_l,      spawn,          {.v = latex} },
+//	{ MODKEY|ShiftMask,                       XK_l,      spawn,          {.v = latex} },
 	{ MODKEY,                       XK_g,      spawn,          {.v = webcam} },
 	{MODKEY, 			XK_Return, spawn,	   {.v=termcmd}	},
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
@@ -155,7 +153,6 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_m, spawn, 				{.v = mutecmd } },
 	{ MODKEY,             			XK_Down, spawn, 			{.v = voldowncmd } },
 	{ MODKEY,             			XK_Up, spawn, 				{.v = volupcmd } },
-
 
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
