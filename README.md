@@ -3,37 +3,43 @@
 
 ## The objective
 
-This is a heavily patched version of the suckless dynamic window manager from the suckless team. It is intended to be a complete replacement for a desktop environment and completely usable as a daily driver for anything from programming to media editing to music production.
+This is a heavily patched version of the suckless dynamic window manager from the suckless team. It is intended to be a complete replacement for a desktop environment.
 
 This repository exists mainly for my personal interest in being able to easily bootstrap a system when needed, but I figured others might want to use it as well.
 
-## What is used/ the dependencies
+Note that I use this WM in arch linux, but any distro with the necessary packages will be able to run it.
 
-- Blueberry for managing bluetooth
+## Dependencies
 
-- Network Manager Applet as a frontend to the network manager application
+- xrandr for multiple monitor setups
 
-- Picom as the compositor
+- nm-applet for managing networks
 
-- Polkit for managing privileged operations
+- xfce4-power-manager as the power manager
 
-- Unclutter for automatically hiding the cursor when inactive
+- blueman for bluetooth connections
 
-- Volumeicon for ... you can make this one up
+- xfce4-notifyd for notifications
 
-- Xrandr for multi-monitor setups
+- polkit for managing authentications
 
-- Wmname set as LG3D to solve Java reparenting programs (for example in Intellij IDEA)
+- picom as the compositor
 
-- Xfce4-notifyd for displaying notifications
+- numlockx for getting the numeric keyboard working at the display manager
 
-- Xfce4-power-manager for battery info
+- volctl to manage volume
 
-- Xfce4-taskmanger as the task manager
+- unclutter to hide the cursor when it is not in use
 
-My slstatus build is also included for cpu, battery, calendar and clock info.
+- keepassxc as the password manager
 
-## Included patches
+- feh for background rendering
+
+- xkbpmap to set the keyboard layout 
+
+- my (included) build of slstatus 
+
+## Patches
 
 - dwm-alphasystray
 - dwm-autostart
@@ -81,6 +87,6 @@ Less essential but important as well is making sure you change the value attribu
 
 ![desktop2](screenshots/desktop1.png)
 
-## To do/coming soon
+## To do
 
-I'm working on a shell script that will install all dependencies on arch-based systems automatically.  
+Shell script  install all dependencies on arch-based systems automatically.  
