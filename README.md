@@ -51,6 +51,7 @@ Note that I use this WM in arch linux, but any distro with the necessary package
 - dwm-fullgaps
 - dwm-viewontag
 - dwm-wrap-6.2
+- dwm-pertag-20200914-61bb8b2
 
 ## Installation
 
