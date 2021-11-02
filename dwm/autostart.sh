@@ -11,7 +11,7 @@ function run {
 run "xrandr --auto --output HDMI-1-0 --mode 1920x1080 --rate 60  --right-of eDP-1"
 run "nm-applet"
 run "xfce4-power-manager"
-run "blueman-applet"
+#run "blueman-applet"
 run "/usr/lib/xfce4/notifyd/xfce4-notifyd"
 run "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 picom --config ~/.config/dwm/picom.conf & 
@@ -22,5 +22,5 @@ run "wmname LG3D"
 run "unclutter"
 run keepassxc &
 run redshift &
-run "feh --bg-fill /home/pedro/Pictures/wallpapers/boat.jpg --bg-fill /home/pedro/Pictures/wallpapers/boat9.jpg"
+run "feh --bg-fill /home/pedro/Pictures/wallpapers/the_last_of_the_buffalo_2014.79.5.jpg --bg-fill /home/pedro/Pictures/wallpapers/siout,_egypt_1999.7.1.jpg"
 run setxkbmap us

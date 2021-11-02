@@ -1,6 +1,6 @@
 /* See LICENSE file for copyright and license details. */
 /* appearance */
-static const unsigned int borderpx  = 2;        /* border pixel of windows */
+static const unsigned int borderpx  = 3;        /* border pixel of windows */
 static const unsigned int gappx     = 15;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
@@ -89,7 +89,7 @@ static const char *browser[] = {"firefox", NULL};
 static const char *browser2[] = {"chromium", NULL};
 static const char *browser3[] = {"vieb", NULL};
 static const char *music[] = {"spotify", NULL};
-static const char *code[] = {"emacs", NULL};
+static const char *notes[] = {"notable", NULL};
 //static const char *latex[] = {"gummi", NULL};
 static const char *webcam[] = {"guvcview", NULL};
 /*logout - must add arco repositories*/
@@ -114,7 +114,7 @@ static Key keys[] = {
 	{ MODKEY|ControlMask|ShiftMask,             XK_o, spawn,          {.v = browser3 } },
 	{ MODKEY,                       XK_o,      spawn,          {.v = browser} },
 	{ MODKEY,                       XK_s,      spawn,          {.v = music} },
-	{ MODKEY,                       XK_c,      spawn,          {.v = code} },
+	{ MODKEY,                       XK_n,      spawn,          {.v = notes} },
 //	{ MODKEY|ShiftMask,                       XK_l,      spawn,          {.v = latex} },
 	{ MODKEY,                       XK_g,      spawn,          {.v = webcam} },
 	{MODKEY, 			XK_Return, spawn,	   {.v=termcmd}	},
