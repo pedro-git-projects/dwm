@@ -21,6 +21,7 @@ run slstatus &
 run "wmname LG3D"
 run "unclutter"
 run keepassxc &
-run redshift &
-run "feh --bg-fill /home/pedro/Pictures/wallpapers/the_last_of_the_buffalo_2014.79.5.jpg --bg-fill /home/pedro/Pictures/wallpapers/siout,_egypt_1999.7.1.jpg"
+run "/opt/ivpn/ui/bin/ivpn-ui"
+run "feh --bg-fill /home/pedro/Pictures/wallpapers/sky_flip.png --bg-fill /home/pedro/Pictures/wallpapers/sky.png"
 run setxkbmap us
+

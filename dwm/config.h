@@ -15,8 +15,9 @@ static const char dmenufont[]       = "monospace:size=10";
 static const char col_gray1[]       = "#282828"; /* bar background color*/
 static const char col_gray2[]       = "#282828"; /* unselected window*/
 static const char col_gray3[]       = "#ebdbb2"; /* unselected workspaces && slstatus*/
-static const char col_gray4[]       = "#ebdbb2"; /*selected workspace && title*/
-static const char col_cyan[]        = "#7c6f64"; /* highlighted workspace, boarder, bar #7c6f64 */
+static const char col_gray4[]       = "#1d2021"; /*selected workspace && title text*/
+static const char col_gray5[]		= "#a9b665"; /* boarder*/
+static const char col_cyan[]        = "#BB7548"; /* highlighted workspace, boarder, bar #7c6f64 */
 static const unsigned int baralpha = OPAQUE;
 static const unsigned int borderalpha = OPAQUE;
 static const char *colors[][3]      = {
@@ -47,7 +48,7 @@ static const Rule rules[] = {
 	/* class                       instance    title      tags mask      isfloating   monitor */
 	{ "Gimp",                      NULL,       NULL,       0,            0,           -1 },
 	{ "Xfce4-terminal",            NULL,       NULL,       0,            1,           -1 },
-	{ "firefox",                   NULL,       NULL,       0,            0,           -1 },
+	{ "librewolf",                   NULL,       NULL,       0,            0,           -1 },
 	{"guvcview",		       NULL, 	   NULL,       0, 	     1,		  -1}	
 };
 
@@ -85,11 +86,12 @@ static const char *filecmd[]  = { "thunar", NULL };
 static const char *calendar[]  = { "gsimplecal", NULL };
 static const char *taskmanager[]  = { "xfce4-taskmanager", NULL };
 static const char *termcmd[] = {"st", NULL};
-static const char *browser[] = {"firefox", NULL};
+static const char *browser[] = {"librewolf", NULL};
 static const char *browser2[] = {"chromium", NULL};
-static const char *browser3[] = {"vieb", NULL};
-static const char *music[] = {"spotify", NULL};
-static const char *notes[] = {"notable", NULL};
+static const char *browser3[] = {"firefox", NULL};
+static const char *music[] = {"spotify-tray", NULL};
+static const char *notes[] = {"trilium", NULL};
+static const char *markdown[] = {"notable", NULL};
 //static const char *latex[] = {"gummi", NULL};
 static const char *webcam[] = {"guvcview", NULL};
 /*logout - must add arco repositories*/
@@ -115,6 +117,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_o,      spawn,          {.v = browser} },
 	{ MODKEY,                       XK_s,      spawn,          {.v = music} },
 	{ MODKEY,                       XK_n,      spawn,          {.v = notes} },
+	{ MODKEY,                       XK_m,      spawn,          {.v = markdown} },
 //	{ MODKEY|ShiftMask,                       XK_l,      spawn,          {.v = latex} },
 	{ MODKEY,                       XK_g,      spawn,          {.v = webcam} },
 	{MODKEY, 			XK_Return, spawn,	   {.v=termcmd}	},
