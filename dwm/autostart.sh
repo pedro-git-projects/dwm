@@ -14,7 +14,7 @@ run "xfce4-power-manager"
 #run "blueman-applet"
 run "/usr/lib/xfce4/notifyd/xfce4-notifyd"
 run "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
-picom --config ~/.config/dwm/picom.conf & 
+picom --xrender-sync-fence  --config ~/.config/dwm/picom.conf & 
 run "numlockx on"
 run "volctl"
 run slstatus &
@@ -23,5 +23,5 @@ run "unclutter"
 run keepassxc &
 run "/opt/ivpn/ui/bin/ivpn-ui"
 run "feh --bg-fill /home/pedro/Pictures/wallpapers/sky_flip.png --bg-fill /home/pedro/Pictures/wallpapers/sky.png"
-run setxkbmap us
-
+# run setxkbmap us
+#run "spotify-tray"

@@ -80,6 +80,8 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
+static const char *scrotcmd[] = {"scrot", "-d3", "/home/pedro/Pictures/screenshots/%Y-%m-%d-%s_$wx$h.jpg", NULL};
+static const char *scrotfocusedcmd[] = {"scrot", "--focused", "/home/pedro/Pictures/screenshots/%Y-%m-%d-%s_$wx$h.jpg", NULL};
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *filecmd[]  = { "thunar", NULL };
@@ -91,7 +93,7 @@ static const char *browser2[] = {"chromium", NULL};
 static const char *browser3[] = {"firefox", NULL};
 static const char *music[] = {"spotify-tray", NULL};
 static const char *notes[] = {"trilium", NULL};
-static const char *markdown[] = {"notable", NULL};
+// static const char *markdown[] = {"notable", NULL};
 //static const char *latex[] = {"gummi", NULL};
 static const char *webcam[] = {"guvcview", NULL};
 /*logout - must add arco repositories*/
@@ -108,6 +110,8 @@ static const char *kbdlayout[] = {"/home/pedro/.scripts/layout.sh", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
+	{0, XK_Print, spawn, {.v = scrotcmd}},
+	{ShiftMask, XK_Print, spawn, {.v = scrotfocusedcmd}},
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = filecmd } },
 	{ MODKEY,			XK_x,	   spawn,	   {.v = logout}},
@@ -117,7 +121,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_o,      spawn,          {.v = browser} },
 	{ MODKEY,                       XK_s,      spawn,          {.v = music} },
 	{ MODKEY,                       XK_n,      spawn,          {.v = notes} },
-	{ MODKEY,                       XK_m,      spawn,          {.v = markdown} },
+//	{ MODKEY,                       XK_m,      spawn,          {.v = markdown} },
 //	{ MODKEY|ShiftMask,                       XK_l,      spawn,          {.v = latex} },
 	{ MODKEY,                       XK_g,      spawn,          {.v = webcam} },
 	{MODKEY, 			XK_Return, spawn,	   {.v=termcmd}	},
