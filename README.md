@@ -29,6 +29,8 @@ Note that I use this WM in arch linux, but any distro with the necessary package
 
 - volctl to manage volume
 
+- scrot for screenshots
+
 - unclutter to hide the cursor when it is not in use
 
 - keepassxc as the password manager
