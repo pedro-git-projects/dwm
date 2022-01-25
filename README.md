@@ -39,7 +39,15 @@ Note that I use this WM in arch linux, but any distro with the necessary package
 
 - xkbpmap to set the keyboard layout 
 
-- my (included) build of slstatus 
+- arcolinux-logout for logout
+
+- adobe-source-han-sans-jp-fonts  for japanese fonts
+
+- noto-fonts-emoji and noto-color-emoji-fontconfig for emoji rendering
+
+- st as the terminal emulator
+
+- slstatus 
 
 ## Patches
 
