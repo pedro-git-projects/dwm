@@ -48,8 +48,8 @@ static const Rule rules[] = {
 	/* class                       instance    title      tags mask      isfloating   monitor */
 	{ "Gimp",                      NULL,       NULL,       0,            0,           -1 },
 	{ "Xfce4-terminal",            NULL,       NULL,       0,            1,           -1 },
-	{ "librewolf",                   NULL,       NULL,       0,            0,           -1 },
-	{"guvcview",		       NULL, 	   NULL,       0, 	     1,		  -1}	
+	{ "librewolf",                 NULL,       NULL,       0,            0,           -1 },
+	{"guvcview",		           NULL, 	   NULL,       0, 	         1,		      -1}	
 };
 
 /* layout(s) */
@@ -103,15 +103,15 @@ static const char *mutecmd[] = { "amixer", "-q", "set", "Master", "toggle", NULL
 static const char *volupcmd[] = { "amixer", "-q", "set", "Master", "5%+", "unmute", NULL };
 static const char *voldowncmd[] = { "amixer", "-q", "set", "Master", "5%-", "unmute", NULL };
 /*change keyboard layout on the fly using dmenu*/
-static const char *kbdlayout[] = {"/home/pedro/.scripts/layout.sh", NULL};
+static const char *kbdlayout[] = {"/home/pedro/.scripts/keybaord_layout.sh", NULL};
 #include "selfrestart.c"
 #include "shiftview.c"
 
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{0, XK_Print, spawn, {.v = scrotcmd}},
-	{ShiftMask, XK_Print, spawn, {.v = scrotfocusedcmd}},
+	{0, XK_Home, spawn, {.v = scrotcmd}},
+	{ShiftMask, XK_Home, spawn, {.v = scrotfocusedcmd}},
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = filecmd } },
 	{ MODKEY,			XK_x,	   spawn,	   {.v = logout}},
