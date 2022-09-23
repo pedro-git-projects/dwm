@@ -71,10 +71,10 @@ static const Layout layouts[] = {
 /* key definitions */
 #define MODKEY Mod4Mask
 #define TAGKEYS(KEY,TAG) \
-	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
-	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
-	{ MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
-	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
+{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
+{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
+{ MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
+{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
@@ -96,12 +96,19 @@ static const char *notes[] = {"trilium", NULL};
 // static const char *markdown[] = {"notable", NULL};
 //static const char *latex[] = {"gummi", NULL};
 static const char *webcam[] = {"guvcview", NULL};
-/*logout - must add arco repositories*/
-static const char *logout[] = {"arcolinux-logout", NULL};
+static const char *logout[] = {"archlinux-logout", NULL};
 /*audio*/
-static const char *mutecmd[] = { "amixer", "-q", "set", "Master", "toggle", NULL };
-static const char *volupcmd[] = { "amixer", "-q", "set", "Master", "5%+", "unmute", NULL };
-static const char *voldowncmd[] = { "amixer", "-q", "set", "Master", "5%-", "unmute", NULL };
+/* pulseaudio 
+   static const char *mutecmd[] = { "amixer", "-q", "set", "Master", "toggle", NULL };
+   static const char *volupcmd[] = { "amixer", "-q", "set", "Master", "5%+", "unmute", NULL };
+   static const char *voldowncmd[] = { "amixer", "-q", "set", "Master", "5%-", "unmute", NULL };
+   */
+// pipewire 
+static const char *mutecmd[] = { "pamixer", "-m",  NULL };
+static const char *unmutecmd[] = { "pamixer", "-u", NULL };
+static const char *volupcmd[] = { "pamixer", "-i", "5",  NULL };
+static const char *voldowncmd[] = { "pamixer", "-d", "5",  NULL };
+
 /*change keyboard layout on the fly using dmenu*/
 static const char *kbdlayout[] = {"/home/pedro/.scripts/keybaord_layout.sh", NULL};
 #include "selfrestart.c"
@@ -121,8 +128,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_o,      spawn,          {.v = browser} },
 	{ MODKEY,                       XK_s,      spawn,          {.v = music} },
 	{ MODKEY,                       XK_n,      spawn,          {.v = notes} },
-//	{ MODKEY,                       XK_m,      spawn,          {.v = markdown} },
-//	{ MODKEY|ShiftMask,                       XK_l,      spawn,          {.v = latex} },
+	//	{ MODKEY,                       XK_m,      spawn,          {.v = markdown} },
+	//	{ MODKEY|ShiftMask,                       XK_l,      spawn,          {.v = latex} },
 	{ MODKEY,                       XK_g,      spawn,          {.v = webcam} },
 	{MODKEY, 			XK_Return, spawn,	   {.v=termcmd}	},
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
@@ -160,18 +167,19 @@ static Key keys[] = {
 	{ MODKEY,		        		XK_Tab,    shiftview,	   {.i =  1 } },
 	{ MODKEY|ShiftMask,		        XK_Tab,	   shiftview,	   {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_m, spawn, 				{.v = mutecmd } },
+	{ MODKEY|ShiftMask,             XK_u, spawn, 				{.v = unmutecmd } },
 	{ MODKEY,             			XK_Down, spawn, 			{.v = voldowncmd } },
 	{ MODKEY,             			XK_Up, spawn, 				{.v = volupcmd } },
 	{MODKEY|ShiftMask,              XK_k, spawn,                 {.v = kbdlayout}},
 	TAGKEYS(                        XK_1,                      0)
-	TAGKEYS(                        XK_2,                      1)
-	TAGKEYS(                        XK_3,                      2)
-	TAGKEYS(                        XK_4,                      3)
-	TAGKEYS(                        XK_5,                      4)
-	TAGKEYS(                        XK_6,                      5)
-	TAGKEYS(                        XK_7,                      6)
-	TAGKEYS(                        XK_8,                      7)
-	TAGKEYS(                        XK_9,                      8)
+		TAGKEYS(                        XK_2,                      1)
+		TAGKEYS(                        XK_3,                      2)
+		TAGKEYS(                        XK_4,                      3)
+		TAGKEYS(                        XK_5,                      4)
+		TAGKEYS(                        XK_6,                      5)
+		TAGKEYS(                        XK_7,                      6)
+		TAGKEYS(                        XK_8,                      7)
+		TAGKEYS(                        XK_9,                      8)
 };
 
 
