@@ -12,12 +12,12 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const Bool viewontag         = True;     /* Switch view on tag switch */
 static const char *fonts[]          = { "Noto Sans Mono:size=12","JoyPixels:pixelsize=12:antialias=true:autohint=true"};
 static const char dmenufont[]       = "monospace:size=10";
-static const char col_gray1[]       = "#282828"; /* bar background color*/
-static const char col_gray2[]       = "#282828"; /* unselected window*/
-static const char col_gray3[]       = "#ebdbb2"; /* unselected workspaces && slstatus*/
-static const char col_gray4[]       = "#1d2021"; /*selected workspace && title text*/
-static const char col_gray5[]		= "#a9b665"; /* boarder*/
-static const char col_cyan[]        = "#BB7548"; /* highlighted workspace, boarder, bar #7c6f64 */
+static const char col_gray1[]       = "#3C3C3C"; /* bar background color*/
+static const char col_gray2[]       = "#3C3C3C"; /* unselected window*/
+static const char col_gray3[]       = "#F8F8F2"; /* unselected workspaces && slstatus*/
+static const char col_gray4[]       = "#272727"; /*selected workspace && title text*/
+static const char col_gray5[]		= "#DA3450"; /* boarder*/
+static const char col_cyan[]        = "#DA3450"; /* highlighted workspace, boarder, bar #7c6f64 */
 static const unsigned int baralpha = OPAQUE;
 static const unsigned int borderalpha = OPAQUE;
 static const char *colors[][3]      = {

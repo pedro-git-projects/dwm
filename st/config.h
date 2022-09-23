@@ -92,28 +92,28 @@ float alpha = 0.95;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-	"#282828", /* hard contrast: #1d2021 / soft contrast: #32302f */
-	"#cc241d", /* red */
-	"#98971a", /* green */
-	"#d79921", /* yellow */
-	"#458588", /* blue */ 
-	"#b16286", /* magenta */ 
-	"#689d6a", /* cyan */ 
-	"#a89984",  /* white */
+	"#26233a", /* hard contrast: #1d2021 / soft contrast: #32302f */
+	"#eb6f92", /* red */
+	"#95b57b", /* green */
+	"#f6c177", /* yellow */
+	"#9ccfd8", /* blue */ 
+	"#c4a7e7", /* magenta */ 
+	"#ebbcba", /* cyan */ 
+	"#e0def4",  /* white */
 	//bright
-	"#928374", /*black*/
-	"#fb4934", /*red*/
-	"#b8bb26", /*green*/
-	"#fabd2f", /*yellow*/
-	"#83a598", /*blue*/
-	"#d3869b", /*magenta*/
-	"#8ec07c", /*cyan*/
-	"#ebdbb2", /*white*/
+	"#6e6a86", /*black*/
+	"#eb6f92", /*red*/
+	"#95b57b", /*green*/
+	"#f6c177", /*yellow*/
+	"#9ccfd8", /*blue*/
+	"#c4a7e7", /*magenta*/
+	"#ebbcba", /*cyan*/
+	"#e0def4", /*white*/
 	[255] = 0,
 	/* more colors can be added after 255 to use with DefaultXX */
-	"#282828",   /* 256 -> bg */
-	"#ebdbb2",   /* 257 -> fg */
-	"#add8e6", /* 258 -> cursor */
+	"#1f1d2e",   /* 256 -> bg */
+	"#908caa",   /* 257 -> fg */
+	"#524f67", /* 258 -> cursor */
 };
 
 
